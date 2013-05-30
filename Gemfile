@@ -16,7 +16,7 @@ gem "cucumber-rails", ">= 1.3.1", :group => :test, :require => false
 gem "launchy", ">= 2.2.0", :group => :test
 gem "capybara", ">= 2.0.3", :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.3.0.0"
+gem "bootstrap-sass"
 gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
@@ -26,3 +26,8 @@ gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+gem "omniauth"
+gem 'omniauth-facebook'
+gem "paperclip"
+gem 'gmaps4rails'
+gem 'google_places'

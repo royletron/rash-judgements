@@ -1,4 +1,2 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+-content_for :pre_container do
+  =gmaps( :map_options => { :container_class => "", :id => "map", :class => "big-map", :center_on_user => true, :disableDefaultUI => true } )

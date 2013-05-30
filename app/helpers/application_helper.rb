@@ -11,5 +11,12 @@ module ApplicationHelper
     HTML
     html.html_safe
   end
-
+  
+  def get_avatar user
+    if(!user.provider_avatar.nil?)
+      return user.provider_avatar
+    else
+      return user.avatar.url(:thumb)
+    end
+  end
 end

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @venue.name
+%p
+  %b Latitude:
+  = @venue.latitude
+%p
+  %b Longitude:
+  = @venue.longitude
+%p
+  %b Description:
+  = @venue.description
+
+= link_to 'Edit', edit_venue_path(@venue)
+\|
+= link_to 'Back', venues_path
