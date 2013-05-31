@@ -1,21 +1,34 @@
-= link_to "Rash Judgements", root_path, :class => 'brand'
-%ul.nav.pull-right
-  - if user_signed_in?
-    %li
-      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-  - else
-    %li
-      = link_to 'Login', new_user_session_path
-  - if user_signed_in?
-    %li
-      = link_to 'Edit account', edit_user_registration_path
-    - if current_user.has_role? :admin
+/ Navigation
+%nav.top-bar
+  %ul.title-area
+    / Title Area
+    %li.name
+      %h1
+        %a{:href => "#"}
+          Rash Judgements
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span menu
+  %section.top-bar-section
+    / Right Nav Section
+    %ul.right
+      %li.divider
       %li
-        = link_to 'Admin', users_path
-    %li<
-      = link_to user_path(current_user) do
-        = image_tag get_avatar(current_user), :width => '25', :height => '25', :class => "avatar"
-        = current_user.name
-  - else
-    %li
-      = link_to 'Sign up', new_user_registration_path
+        %a{:href => root_path} Home
+      %li.divider
+      %li
+        %a{:href => "#"} Main Item 2
+      %li.divider
+      %li.has-dropdown
+        %a{:href => "#"} Main Item 3
+        %ul.dropdown
+          %li
+            %a{:href => "#"} Dropdown Option
+          %li
+            %a{:href => "#"} Dropdown Option
+          %li
+            %a{:href => "#"} Dropdown Option
+          %li.divider
+          %li
+            %a{:href => "#"} See all →
+/ End Top Bar

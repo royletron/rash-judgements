@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-RashJudgements::Application.config.secret_token = 'c00421ca407c992e6ad18a561c4102ed87a68e686b4ddadaa30e04d98b95797225dc1f17c4daef7983e311a6347074bd7f675ef581f0da3d5e90f9a4d61e22f3'
+RashJudgements::Application.config.secret_token = '97c0652f5612b522973046a05b6af9105f10aa7b535653a558480d9709b53e7231e725c7a11ca00e351567a112e70d062dedf87145269def3d31733464193842'

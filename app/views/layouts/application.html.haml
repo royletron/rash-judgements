@@ -1,29 +1,22 @@
 !!!
-%html
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class="ie6" lang="en">
+/[if IE 7 ] <html class="ie7" lang="en">
+/[if IE 8 ] <html class="ie8" lang="en">
+/ [if (gte IE 9)|!(IE)]><!
+%html{:lang => "en"}
+  / <![endif]
   %head
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "Rash Judgements"
-      %meta{:content => content_for?(:description) ? yield(:description) : "Rash Judgements", :name => "description"}
-        = stylesheet_link_tag "application", :media => "all"
-        = javascript_include_tag "application"
-        = csrf_meta_tags
-        = yield(:head)
+    %meta{:charset => "utf-8"}/
+    / Uncomment to make IE8 render like IE7
+    / <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    / Set the viewport width to device width for mobile
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/custom.modernizr"
+    = csrf_meta_tags
   %body
-    #wrap
-      .navbar.navbar-fixed-top
-        %nav.navbar-inner
-          .container
-            = render 'layouts/navigation'    
-      .main_container
-        = yield :pre_container
-        #main{:role => "main"}
-          .container
-            = render 'layouts/messages'
-            = yield
-          / ! end of .container
-        / ! end of #main
-      #push
-    #footer
-      .container
-        %p.credit Made by Darren
-    = yield :scripts
+    = render 'layouts/navigation'
+    = yield
+    = javascript_include_tag "application"
